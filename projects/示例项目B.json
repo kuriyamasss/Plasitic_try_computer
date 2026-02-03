@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "name": "示例项目B",
+    "created_date": "2025-01-15 09:00:00",
+    "last_modified": "2025-02-02 16:45:00",
+    "description": "另一个示例项目"
+  },
+  "custom_expense_types": [],
+  "formulas": [
+    {
+      "id": "material_cost",
+      "name": "材料费",
+      "expression": "quantity * unit_price",
+      "params": [
+        "quantity",
+        "unit_price"
+      ],
+      "description": "材料费 = 数量 × 单价",
+      "is_custom": false
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
+      "expense_type": "material",
+      "name": "原材料采购",
+      "quantity": 100,
+      "unit_price": 50,
+      "total_amount": 5000,
+      "date": "2025-01-20",
+      "notes": "第一批原材料",
+      "created_at": "2025-01-20 11:00:00"
+    },
+    {
+      "id": 2,
+      "expense_type": "other",
+      "name": "差旅费用",
+      "total_amount": 3000,
+      "date": "2025-01-25",
+      "notes": "项目调研差旅",
+      "created_at": "2025-01-25 15:30:00"
+    }
+  ]
+}

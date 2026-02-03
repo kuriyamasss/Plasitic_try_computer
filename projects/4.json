@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "name": "4",
+    "created_date": "2026-02-03 16:59:15",
+    "last_modified": "2026-02-03 16:59:15",
+    "description": ""
+  },
+  "custom_expense_types": [],
+  "formulas": [
+    {
+      "id": "labor_cost",
+      "name": "人力成本",
+      "expression": "hours * hourly_rate",
+      "params": [
+        "hours",
+        "hourly_rate"
+      ],
+      "description": "人力成本 = 工时 × 时薪",
+      "is_custom": false
+    },
+    {
+      "id": "material_cost",
+      "name": "材料费",
+      "expression": "quantity * unit_price",
+      "params": [
+        "quantity",
+        "unit_price"
+      ],
+      "description": "材料费 = 数量 × 单价",
+      "is_custom": false
+    },
+    {
+      "id": "equipment_cost",
+      "name": "设备费",
+      "expression": "usage_time * rate",
+      "params": [
+        "usage_time",
+        "rate"
+      ],
+      "description": "设备费 = 使用时长 × 费率",
+      "is_custom": false
+    }
+  ],
+  "expenses": []
+}

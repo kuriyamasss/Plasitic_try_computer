@@ -1,0 +1,74 @@
+{
+  "project_info": {
+    "name": "示例项目A",
+    "created_date": "2025-02-01 10:00:00",
+    "last_modified": "2025-02-03 14:30:00",
+    "description": "这是一个示例项目，包含一些费用记录"
+  },
+  "custom_expense_types": [
+    {
+      "id": 1,
+      "name": "外包服务",
+      "description": "第三方外包服务费用",
+      "created_at": "2025-02-01 10:05:00"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "labor_cost",
+      "name": "人力成本",
+      "expression": "hours * hourly_rate",
+      "params": [
+        "hours",
+        "hourly_rate"
+      ],
+      "description": "人力成本 = 工时 × 时薪",
+      "is_custom": false
+    },
+    {
+      "id": "custom_1",
+      "name": "外包成本",
+      "expression": "base_cost + additional_fees",
+      "params": [
+        "base_cost",
+        "additional_fees"
+      ],
+      "description": "外包成本 = 基础费用 + 附加费用",
+      "is_custom": true,
+      "created_at": "2025-02-01 10:10:00"
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
+      "expense_type": "labor",
+      "name": "开发人员工资",
+      "quantity": 160,
+      "unit_price": 150,
+      "total_amount": 24000,
+      "date": "2025-02-01",
+      "notes": "2月份开发人员工资",
+      "created_at": "2025-02-01 10:15:00"
+    },
+    {
+      "id": 2,
+      "expense_type": "material",
+      "name": "服务器费用",
+      "quantity": 1,
+      "unit_price": 5000,
+      "total_amount": 5000,
+      "date": "2025-02-02",
+      "notes": "云服务器月租",
+      "created_at": "2025-02-02 09:30:00"
+    },
+    {
+      "id": 3,
+      "expense_type": "equipment",
+      "name": "开发设备",
+      "total_amount": 12000,
+      "date": "2025-02-03",
+      "notes": "购买开发用笔记本电脑",
+      "created_at": "2025-02-03 14:00:00"
+    }
+  ]
+}
