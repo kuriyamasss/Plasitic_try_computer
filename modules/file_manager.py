@@ -40,8 +40,12 @@ class FileManager:
         safe_name = self._sanitize_filename(project_name)
         return os.path.join(self.projects_dir, f"{safe_name}{self.file_extension}")
     
-    def _sanitize_filename(self, filename: str) -> str:
+    def _sanitize_filename(self, filename) -> str:
         """Clean filename, remove illegal characters"""
+        # Convert to string to handle integer input
+        if not isinstance(filename, str):
+            filename = str(filename)
+        
         # Remove illegal characters from Windows/Unix filenames
         illegal_chars = '<>:"/\\|?*'
         for char in illegal_chars:
@@ -67,8 +71,13 @@ class FileManager:
                     with open(project_path, 'r', encoding='utf-8') as f:
                         data = json.load(f)
                     
-                    project_name = os.path.splitext(filename)[0]
+                    # 从JSON数据中获取项目名称，而不是从文件名推断
                     project_info = data.get('project_info', {})
+                    project_name = project_info.get('name', '')
+                    
+                    # 如果JSON中没有项目名称，则使用文件名（不含扩展名）
+                    if not project_name:
+                        project_name = os.path.splitext(filename)[0]
                     
                     projects.append({
                         'name': project_name,
